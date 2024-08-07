@@ -55,43 +55,52 @@ wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,4
                     <form id="addForm">
                         <div class="form-group">
                             <label for="add-pf_number">PF Number:</label>
-                            <input type="text" id="add-pf_number" pattern="\d{5}" required title="Five digits required">
-
+                            <input type="text" id="add-pf_number" name="pf_number" required>
                         </div>
                         <div class="form-group">
-                            <label for="add-first_name">First Name:</label>
-                            <input type="text" id="add-first_name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="add-last_name">Last Name:</label>
-                            <input type="text" id="add-last_name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="add-gender">Gender:</label>
+                            <label>Gender:</label>
                             <input type="radio" id="add-gender-male" name="add-gender" value="Male" required>
                             <label for="add-gender-male">Male</label>
-                            <input type="radio" id="add-gender-female" name="add-gender" value="Female">
+                            <input type="radio" id="add-gender-female" name="add-gender" value="Female" required>
                             <label for="add-gender-female">Female</label>
                         </div>
                         <div class="form-group">
-                            <label for="add-date_of_birth">Date of Birth:</label>
-                            <input type="date" id="add-date_of_birth" required>
+                            <label for="add-first_name">First Name:</label>
+                            <input type="text" id="add-first_name" name="first_name" required>
                         </div>
+
+                        <div class="form-group">
+                            <label for="add-last_name">Last Name:</label>
+                            <input type="text" id="add-last_name" name="last_name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="add-date_of_birth">Date of Birth:</label>
+                            <input type="date" id="add-date_of_birth" name="date_of_birth" required>
+                        </div>
+
                         <div class="form-group">
                             <label for="add-email">Email:</label>
-                            <input type="email" id="add-email" required>
+                            <input type="email" id="add-email" name="email" required>
                         </div>
+
                         <div class="form-group">
                             <label for="add-phone_number">Phone Number:</label>
-                            <input type="tel" id="add-phone_number" required>
+                            <input type="text" id="add-phone_number" name="phone_number" required>
                         </div>
+
                         <div class="form-group">
                             <label for="add-preferred_notification_method">Preferred Notification Method:</label>
-                            <input type="text" id="add-preferred_notification_method" required>
+                            <select id="add-preferred_notification_method" name="preferred_notification_method"
+                                required>
+                                <option value="Email">Email</option>
+                                <option value="SMS">SMS</option>
+                                <option value="Both">Both</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="add-department">Department:</label>
-                            <input type="text" id="add-department" required>
+                            <input type="text" id="add-department" name="department" required>
                         </div>
                         <button type="submit">Add Employee</button>
                     </form>
@@ -127,10 +136,10 @@ wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,4
                 <form id="editForm">
                     <!-- <input type="hidden" id="edit-pf_number"> -->
                     <!-- <div class="form-group"> -->
-                        <!-- <label for="edit-pf_number">PF Number:</label> -->
-                        <!-- <input type="text" id="edit-pf_number" pattern="\d{5}"
+                    <!-- <label for="edit-pf_number">PF Number:</label> -->
+                    <!-- <input type="text" id="edit-pf_number" pattern="\d{5}"
                             title="PF Number must be exactly 5 digits" required> -->
-                            <!-- <input id="edit-pf_number"> -->
+                    <!-- <input id="edit-pf_number"> -->
                     <!-- </div> -->
                     <div class="form-group">
                         <label for="edit-pf_number">PF Number:</label>
@@ -165,7 +174,11 @@ wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,4
                     </div>
                     <div class="form-group">
                         <label for="edit-preferred_notification_method">Preferred Notification Method:</label>
-                        <input type="text" id="edit-preferred_notification_method" required>
+                        <select id="edit-preferred_notification_method" name="preferred_notification_method" required>
+                            <option value="Email">Email</option>
+                            <option value="SMS">SMS</option>
+                            <option value="Both">Both</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="edit-department">Department:</label>

@@ -76,13 +76,13 @@ function handleEdit(event) {
             const closeEditModal = document.querySelector('#editModal #close');
             closeEditModal.onclick = function () {
                 editModal.style.display = 'none';
-            }
+            };
 
             window.onclick = function (event) {
                 if (event.target == editModal) {
                     editModal.style.display = 'none';
                 }
-            }
+            };
         })
         .catch(error => console.error('Error fetching employee data:', error));
 }
@@ -195,14 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close add modal
     closeAddModal.onclick = function () {
         addModal.style.display = 'none';
-    }
+    };
 
     // Close add modal when clicking outside of it
     window.onclick = function (event) {
         if (event.target == addModal) {
             addModal.style.display = 'none';
         }
-    }
+    };
 
     // Validation functions
     function validatePFNumber(pfNumber) {
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function isPFNumberUnique(pfNumber) {
         const response = await fetch(`/employees/pf_number/${pfNumber}`);
-        return response.ok;
+        return response.status === 404; // Return true if PF number does not exist
     }
 
     // Handle add form submission
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pf_number: pfNumber,
             first_name: document.getElementById('add-first_name').value,
             last_name: document.getElementById('add-last_name').value,
-            gender: document.getElementById('add-gender').value,
+            gender: document.querySelector('input[name="add-gender"]:checked').value,
             date_of_birth: document.getElementById('add-date_of_birth').value,
             email: document.getElementById('add-email').value,
             phone_number: document.getElementById('add-phone_number').value,
@@ -264,3 +264,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
